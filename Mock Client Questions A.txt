@@ -1,0 +1,117 @@
+Python:
+Data types,
+Data structures
+break,pass,continue
+OOPs
+lambda functions
+operators
+palindrome, Armstrong, Fibonacci
+decorators
+remove duplicates from list - (code or syntax)
+tuple
+type casting
+iterators
+variables
+conditional statements
+input output operators
+loops
+tuple vs list = which rollbacks
+package vs module
+constructors destructors
+try except catch
+
+
+
+SQL:
+CTE,
+Views,
+stored procedure
+Trigger 
+(CTE,Views,stored procedure difference)
+fact vs dimension
+is() operator
+SCD,types
+Star vs Snowflake Schema
+trim
+Normalization,
+Granularity
+Data Warehousing,
+ETL
+types of keys in fact table
+duplicate record identify
+delete,drop,truncate
+surrogate key
+confirm and role playing dimension
+Window and date Related Functions
+union vs union all
+Delimiter
+lead lag
+rank, dense rank, row no
+window functions,
+coalesce
+coalesce vs case
+
+
+
+Power BI:
+kpi,
+waterfall chart,
+filter
+Row Level Security
+slicer vs filter
+types of filter
+interactivity in power bi
+publish report
+provide interactivity
+publish report
+tooltip
+filter
+calculate vs filter
+time intelligence
+types of schemas
+customized visual
+workspace
+power bi service
+desktop
+drill through
+DAX
+calculate
+filter
+Rankx
+
+
+
+
+Load: Incremental, full load
+
+
+power bi vs Tableau vs Qlik sense (Good for Analysis)
+
+
+Tableau:
+Parameter
+sum vs sumx
+publish the report
+join vs blend
+include , exclude
+lod
+fixed
+tooltip
+different 
+lookup
+filters
+customized visual
+concatenate two names in tableau
+scheduled data refresh
+waterfall 
+
+
+tableau prep builder
+
+
+Qlik sense:
+building blocks
+keep
+join vs keep
+concatenate
+

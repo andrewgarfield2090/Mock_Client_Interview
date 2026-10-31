@@ -1,0 +1,1798 @@
+Data Warehousing.txt
+1. What is a Data Warehouse?
+Answer: A Data Warehouse is a centralised repository used to store historical data from multiple sources for reporting and analysis.
+
+2. What are the main characteristics of a Data Warehouse?
+Answer: Subject-oriented, Integrated, Time-variant and Non-volatile.
+
+3. What is OLTP?
+Answer: OLTP (Online Transaction Processing) handles day-to-day transactional operations such as INSERT, UPDATE and DELETE.
+
+4. What is OLAP?
+Answer: OLAP (Online Analytical Processing) supports complex queries and analytical reporting on large volumes of data.
+
+5. What is the difference between OLTP and OLAP?
+Answer: OLTP handles daily transactions, whereas OLAP is designed for analytical queries and decision-making.
+
+6. What is ETL?
+Answer: ETL stands for Extract, Transform and Load, which moves data from source systems into a target system.
+
+7. What is ELT?
+Answer: ELT stands for Extract, Load and Transform, where data is transformed after loading into the target platform.
+
+8. What is the difference between ETL and ELT?
+Answer: ETL transforms data before loading, whereas ELT loads data first and transforms it inside the target system.
+
+9. What is a Data Mart?
+Answer: A Data Mart is a smaller data repository designed for a specific business department, such as Sales or Finance.
+
+10. What is a Staging Area?
+Answer: A Staging Area is a temporary storage location where source data is collected before transformation and loading.
+
+11. What is Metadata?
+Answer: Metadata is data about data, describing its structure, meaning, source and format.
+
+12. What is a Data Lake?
+Answer: A Data Lake stores large amounts of raw structured, semi-structured and unstructured data.
+
+13. What is the difference between a Data Lake and a Data Warehouse?
+Answer: A Data Lake stores raw data in different formats, whereas a Data Warehouse stores structured and processed data for analytics.
+
+14. What is a Fact Table?
+Answer: A Fact Table stores measurable business data such as Sales, Quantity, Revenue and Profit.
+
+15. What is a Dimension Table?
+Answer: A Dimension Table stores descriptive business information such as Customer, Product, Date and Location.
+
+16. What is a Star Schema?
+Answer: A Star Schema is a dimensional model where a central fact table connects directly to multiple dimension tables.
+
+17. What is a Snowflake Schema?
+Answer: A Snowflake Schema is a dimensional model where dimension tables are further normalised into related tables.
+
+18. What is the difference between Star Schema and Snowflake Schema?
+Answer: Star Schema uses denormalised dimensions, whereas Snowflake Schema uses normalised dimensions.
+
+19. What is a Galaxy Schema?
+Answer: A Galaxy Schema, also called a Fact Constellation Schema, contains multiple fact tables sharing common dimensions.
+
+20. What is a Grain in Data Modelling?
+Answer: Grain defines the level of detail represented by each row in a fact table.
+
+21. Why is defining grain important?
+Answer: Grain ensures that every fact table row has a clearly defined business meaning and prevents incorrect aggregation.
+
+22. What is a Surrogate Key?
+Answer: A Surrogate Key is a system-generated unique identifier used as a primary key in a dimension table.
+
+23. What is a Natural Key?
+Answer: A Natural Key is a business-generated identifier, such as Customer ID or Employee ID.
+
+24. What is the difference between Surrogate Key and Natural Key?
+Answer: A Surrogate Key is system-generated, whereas a Natural Key comes from the source business system.
+
+25. What is a Primary Key in Data Modelling?
+Answer: A Primary Key uniquely identifies each record in a table.
+
+26. What is a Foreign Key?
+Answer: A Foreign Key connects one table to another by referencing a primary or unique key.
+
+27. What is a Measure?
+Answer: A Measure is a numerical value in a fact table that can be analysed, such as Sales, Profit or Quantity.
+
+28. What is a Dimension Attribute?
+Answer: A Dimension Attribute is a descriptive column used to filter, group or analyse data.
+
+29. What is a Degenerate Dimension?
+Answer: A Degenerate Dimension is a dimension attribute stored directly in the fact table without a separate dimension table, such as Order Number.
+
+30. What is a Conformed Dimension?
+Answer: A Conformed Dimension is a shared dimension used consistently across multiple fact tables or data marts.
+
+31. What is a Role-Playing Dimension?
+Answer: A Role-Playing Dimension is one dimension used multiple times for different purposes, such as Order Date and Delivery Date.
+
+32. What is a Junk Dimension?
+Answer: A Junk Dimension combines multiple low-cardinality flags and indicators into one dimension table.
+
+33. What is a Slowly Changing Dimension (SCD)?
+Answer: SCD manages historical changes in dimension attributes over time.
+
+34. What is SCD Type 1?
+Answer: SCD Type 1 overwrites old values with new values without maintaining historical records.
+
+35. What is SCD Type 2?
+Answer: SCD Type 2 creates a new dimension record to maintain complete historical changes.
+
+36. What is SCD Type 3?
+Answer: SCD Type 3 stores limited historical information using additional columns, such as Current City and Previous City.
+
+37. What is a Factless Fact Table?
+Answer: A Factless Fact Table stores business events or relationships without numerical measures.
+
+38. What are the different types of Fact Tables?
+Answer: Transaction Fact, Periodic Snapshot Fact and Accumulating Snapshot Fact.
+
+39. What is a Transaction Fact Table?
+Answer: A Transaction Fact Table stores individual business transactions, such as each sales order line.
+
+40. What is a Periodic Snapshot Fact Table?
+Answer: A Periodic Snapshot Fact Table stores measurements at regular intervals, such as daily or monthly account balances.
+
+41. What is an Accumulating Snapshot Fact Table?
+Answer: An Accumulating Snapshot Fact Table tracks a business process through multiple milestones, such as order processing and delivery.
+
+42. What is Normalisation?
+Answer: Normalisation organises data into multiple related tables to reduce redundancy and improve data integrity.
+
+43. What is Denormalisation?
+Answer: Denormalisation combines data to reduce joins and improve query performance for analytical workloads.
+
+44. What is 1NF?
+Answer: First Normal Form requires each column to contain atomic values without repeating groups.
+
+45. What is 2NF?
+Answer: Second Normal Form requires 1NF and no partial dependency on a part of a composite candidate key.
+
+46. What is 3NF?
+Answer: Third Normal Form requires 2NF and no transitive dependency of non-key attributes on candidate keys.
+
+47. What is a Composite Key?
+Answer: A Composite Key consists of two or more columns that together uniquely identify a record.
+
+48. What is Data Granularity?
+Answer: Data Granularity refers to the level of detail stored in a data warehouse.
+
+49. What is Data Cleansing?
+Answer: Data Cleansing identifies and corrects inaccurate, duplicate, missing or inconsistent data.
+
+50. What is Data Profiling?
+Answer: Data Profiling analyses source data to understand its quality, structure, completeness and consistency.
+
+51. What is Incremental Loading?
+Answer: Incremental Loading loads only new or modified records instead of reloading the entire dataset.
+
+52. What is Full Loading?
+Answer: Full Loading loads the complete dataset from the source into the target system.
+
+53. What is CDC?
+Answer: CDC (Change Data Capture) identifies and captures INSERT, UPDATE and DELETE changes from source systems.
+
+54. What is a Data Pipeline?
+Answer: A Data Pipeline is a sequence of processes that moves and transforms data from source systems to target systems.
+
+55. What is Data Lineage?
+Answer: Data Lineage tracks the origin, movement and transformation of data throughout its lifecycle.
+
+56. What is a Dimension Hierarchy?
+Answer: A Dimension Hierarchy organises dimension attributes into levels, such as Country → State → City.
+
+57. What is a Date Dimension?
+Answer: A Date Dimension contains calendar attributes such as Date, Month, Quarter, Year and Weekday.
+
+58. What is a Bridge Table?
+Answer: A Bridge Table handles complex relationships, particularly many-to-many relationships between dimensions and facts.
+
+59. What is a Many-to-Many Relationship?
+Answer: A Many-to-Many Relationship occurs when multiple records in one table relate to multiple records in another table.
+
+60. What is a Data Warehouse Bus Matrix?
+Answer: A Bus Matrix identifies business processes and the conformed dimensions shared across different fact tables.
+
+Performance Optimization.txt
+How to improve dashboard performance in Tableau, Qlik Sense and Power BI
+
+“ I improve dashboard performance by optimising the data model, reducing unnecessary data, simplifying calculations, limiting visuals, using efficient filters and optimising data refresh and query execution.”
+
+1. Common performance improvement techniques
+1. Remove unnecessary columns and rows from the source.
+2. Use aggregated data wherever detailed data is not required.
+3. Avoid unnecessary calculated fields and complex expressions.
+4. Use a proper Star Schema with fact and dimension tables.
+5. Avoid many-to-many relationships unless required.
+6. Reduce the number of visuals on a single dashboard page.
+7. Avoid unnecessary filters and slicers.
+8. Use efficient joins and avoid duplicate records.
+9. Implement incremental refresh or incremental data loading.
+10. Measure performance using the tool's built-in performance analysis features.
+
+
+Tableau – Performance optimization
+1. Use Extract instead of Live: Use Hyper extracts when real-time data is not required.
+2. Reduce data volume: Apply extract filters and data source filters to load only required records.
+3. Hide unused columns: Remove unnecessary fields before creating extracts.
+4. Reduce marks: Avoid displaying thousands of unnecessary data points in charts.
+5. Limit dashboard worksheets: Avoid putting too many charts on one dashboard.
+6. Reduce quick filters: Too many filters can generate additional queries.
+7. Use Apply button: Allow users to select multiple filter values and execute the query once.
+8. Optimise calculations: Avoid deeply nested calculations and unnecessary table calculations.
+9. Optimise LOD expressions: Avoid unnecessarily detailed FIXED, INCLUDE and EXCLUDE calculations.
+10. Use database calculations: Push complex row-level calculations to SQL or the database when appropriate.
+11. Avoid unnecessary COUNTD: Distinct count calculations can be expensive on large datasets.
+12. Use dashboard actions: Use filter actions to guide users from summary to detailed views instead of displaying everything together.
+13. Remove unused worksheets: Delete unused sheets, fields and data sources.
+How to identify performance issues:
+- Performance Recording: Help → Settings and Performance → Start Performance Recording.
+- Workbook Optimizer: Check workbook design recommendations.
+- Identify whether the problem is query execution, calculation, connection or rendering.
+Official references: 
+Tableau+2
+
+Qlik Sense – Performance optimization
+1. Use QVD files: Store transformed data in QVD files for faster loading.
+2. Use optimized QVD loading: Avoid transformations during the load when you want optimized QVD loading.
+3. Remove synthetic keys: Avoid multiple common fields between tables unless intentionally designed.
+4. Remove circular references: Design a clean associative data model.
+5. Use a star schema: Keep fact and dimension tables structured properly.
+6. Reduce data volume: Load only required fields and records.
+7. Pre-aggregate data: Aggregate data in the load script when users do not need transaction-level details.
+8. Avoid unnecessary IF expressions: Especially inside aggregation functions.
+9. Prefer Set Analysis: Use Set Analysis instead of row-by-row IF conditions where the logic allows it.
+10. Simplify chart expressions: Avoid complex nested IF, Aggr and calculated dimensions where possible.
+11. Reduce table columns: Avoid displaying too many dimensions and measures in straight tables.
+12. Use mapping loads: Use ApplyMap() for simple lookup transformations instead of unnecessary joins.
+13. Avoid unnecessary joins: Use associations between tables when appropriate.
+14. Optimise reload scripts: Use incremental loading for large datasets when suitable.
+15. Reduce objects per sheet: Too many charts and objects can affect sheet rendering.
+Example: IF vs Set Analysis
+
+Less efficient for a large dataset:
+Sum(If(Region = 'East', Sales))
+
+
+Often more efficient:
+Sum({<Region={'East'}>} Sales)
+
+
+How to identify performance issues:
+- Use Qlik Sense App Performance Evaluation.
+- Inspect the Data Model Viewer for synthetic keys and circular references.
+- Check reload time, app size, chart response time and memory usage.
+Official references: 
+Qlik Help+2
+
+
+Power BI – Performance optimization
+1. Use Star Schema: Separate fact and dimension tables.
+2. Reduce data volume: Remove unnecessary rows and columns in Power Query.
+3. Use Import mode: Prefer Import mode when real-time data is not required and the dataset fits available capacity.
+4. Use DirectQuery carefully: DirectQuery performance depends heavily on the underlying database and query design.
+5. Enable Query Folding: Push Power Query transformations back to the source database wherever possible.
+6. Use Incremental Refresh: Refresh only recent or changed data instead of the entire historical dataset.
+7. Optimise DAX: Avoid unnecessarily complex calculations and nested iterators.
+8. Use variables: Store intermediate results using VAR and reuse them.
+9. Avoid unnecessary FILTER: Prefer Boolean filter arguments in CALCULATE when appropriate.
+10. Avoid unnecessary calculated columns: Use measures when the calculation needs to respond dynamically to filters.
+11. Optimise relationships: Prefer one-to-many relationships and avoid unnecessary bidirectional filtering.
+12. Reduce visuals: Avoid too many visuals on one report page.
+13. Limit slicers: Avoid high-cardinality slicers and unnecessary visual interactions.
+14. Use aggregations: Create summary tables for large datasets when appropriate.
+15. Avoid unnecessary high-cardinality columns: Columns containing unique transaction IDs can increase model size.
+Example: DAX optimization
+
+Less efficient:
+East Sales =
+CALCULATE(
+    SUM(Sales[Sales]),
+    FILTER(
+        Sales,
+        Sales[Region] = "East"
+    )
+)
+
+
+Usually simpler and more efficient:
+East Sales =
+CALCULATE(
+    SUM(Sales[Sales]),
+    Sales[Region] = "East"
+)
+
+
+How to identify performance issues:
+- Performance Analyzer: View → Performance Analyzer.
+- DAX Studio: Analyse slow DAX queries and server timings.
+- Power Query: Check whether query folding is working.
+- Model view: Check relationships and model structure.
+Official reference: 
+Microsoft Learn
+
+5. Comparison: Tableau vs Qlik Sense vs Power BI
+Area	Tableau	Qlik Sense	Power BI
+Data storage	Hyper Extract	QVD	VertiPaq / Import
+Data model	Relationships / joins	Associative model	Star schema
+Calculation optimization	Calculated fields and LOD	Set Analysis and script	DAX measures
+Data reduction	Extract filters	Script filters	Power Query
+Performance tool	Performance Recorder	App Performance Evaluation	Performance Analyzer
+Data refresh	Extract refresh	Reload script	Scheduled / Incremental refresh
+Common issue	Too many worksheets and marks	Synthetic keys and complex expressions	Complex DAX and poor relationships
+
+Powerbi.txt
+What is Power BI?
+Answer: Power BI is a Microsoft Business Intelligence tool used to connect, transform, model, visualise and analyse data.
+
+
+
+What is DAX?
+Answer: DAX (Data Analysis Expressions) is a formula language used in Power BI for calculations and data analysis.
+
+
+
+What are the different types of calculations in Power BI?
+Answer: Calculated Columns, Measures and Calculated Tables are the three major types of DAX calculations.
+
+
+
+What is a Calculated Column?
+Answer: A Calculated Column creates a new column in a table by evaluating a DAX expression for every row.
+
+
+
+What is a Measure?
+Answer: A Measure is a dynamic calculation evaluated based on the current filter context of a report.
+
+
+
+What is the difference between a Calculated Column and a Measure?
+Answer: A Calculated Column is calculated row by row and stored in the model, whereas a Measure is calculated dynamically when used in a visual.
+
+
+
+What is Row Context?
+Answer: Row Context means DAX evaluates an expression for the current row of a table.
+
+
+
+What is Filter Context?
+Answer: Filter Context is the set of filters applied to a calculation through slicers, visual filters, page filters, report filters or DAX expressions.
+
+
+
+What is the difference between Row Context and Filter Context?
+Answer: Row Context evaluates calculations for the current row, whereas Filter Context determines which rows are included in a calculation.
+
+
+
+What is Context Transition?
+Answer: Context Transition converts Row Context into Filter Context, commonly performed by the CALCULATE function.
+
+
+
+What is CALCULATE in DAX?
+Answer: CALCULATE evaluates an expression after modifying or adding filter conditions.
+
+
+
+What is the difference between CALCULATE and CALCULATETABLE?
+Answer: CALCULATE returns a scalar value, whereas CALCULATETABLE returns a table after applying filter conditions.
+
+
+
+What is FILTER in DAX?
+Answer: FILTER returns a table containing only the rows that satisfy a specified condition.
+
+
+
+What is the difference between CALCULATE and FILTER?
+Answer: CALCULATE modifies filter context, whereas FILTER returns a filtered table that can be used as a filter argument.
+
+
+
+What is ALL in DAX?
+Answer: ALL removes filters from a specified table or column and returns all applicable rows or values.
+
+
+
+What is ALLEXCEPT in DAX?
+Answer: ALLEXCEPT removes all filters from a table except the filters on specified columns.
+
+
+
+What is the difference between ALL and ALLEXCEPT?
+Answer: ALL removes filters from specified tables or columns, whereas ALLEXCEPT removes all filters from a table except specified columns.
+
+
+
+What is ALLSELECTED?
+Answer: ALLSELECTED removes filters applied inside the query or visual while retaining external filters such as slicer selections.
+
+
+
+What is REMOVEFILTERS?
+Answer: REMOVEFILTERS clears filters from specified tables or columns inside CALCULATE.
+
+
+
+What is the difference between ALL and REMOVEFILTERS?
+Answer: Both can remove filters, but ALL can also return a table, whereas REMOVEFILTERS is specifically used as a filter modifier.
+
+
+
+What is KEEPFILTERS?
+Answer: KEEPFILTERS adds a filter while intersecting it with existing filters instead of replacing filters on the same columns.
+
+
+
+What is RELATED in DAX?
+Answer: RELATED retrieves a value from a related table, typically through a many-to-one relationship, in row context.
+
+
+
+What is RELATEDTABLE?
+Answer: RELATEDTABLE returns the related rows from another table, typically using the current row context.
+
+
+
+What is the difference between SUM and SUMX?
+Answer: SUM adds values from a single column, whereas SUMX evaluates an expression row by row and then sums the results.
+
+
+
+What is the difference between COUNT and COUNTA?
+Answer: COUNT counts non-blank values in supported numeric or date columns, whereas COUNTA counts non-blank values of supported data types.
+
+
+
+What is COUNTROWS?
+Answer: COUNTROWS returns the number of rows in a table or filtered table expression.
+
+
+
+What is DISTINCTCOUNT?
+Answer: DISTINCTCOUNT counts the unique values in a specified column, including BLANK as a distinct value.
+
+
+
+What is DIVIDE in DAX?
+Answer: DIVIDE performs division safely and allows an alternative result when the denominator is zero or blank.
+
+
+
+What is IF in DAX?
+Answer: IF evaluates a logical condition and returns one value when TRUE and another when FALSE.
+
+
+
+What is SWITCH in DAX?
+Answer: SWITCH evaluates an expression against multiple conditions and returns the corresponding result.
+
+
+
+What is VAR in DAX?
+Answer: VAR stores the result of an expression in a variable for reuse within a DAX calculation.
+
+
+
+What is RETURN in DAX?
+Answer: RETURN specifies the final expression or result of a DAX formula after variable declarations.
+
+
+
+What is the difference between IF and SWITCH?
+Answer: IF is suitable for conditional branching, whereas SWITCH is useful for handling multiple possible conditions or values.
+
+
+
+What is a calculated table?
+Answer: A calculated table is a new table created using a DAX expression and stored in the data model.
+
+
+
+What is a Virtual Table in DAX?
+Answer: A Virtual Table is a temporary table created during DAX evaluation using functions such as FILTER, SUMMARIZE and ADDCOLUMNS.
+
+
+
+What is SUMMARIZE?
+Answer: SUMMARIZE creates a grouped table based on specified columns and can include calculated expressions.
+
+
+
+What is ADDCOLUMNS?
+Answer: ADDCOLUMNS adds calculated columns to an existing table expression.
+
+
+
+What is SELECTEDVALUE?
+Answer: SELECTEDVALUE returns the selected value when exactly one distinct value is available; otherwise, it returns an alternate result or BLANK.
+
+
+
+What is HASONEVALUE?
+Answer: HASONEVALUE checks whether exactly one distinct value is present in the filter context for a column.
+
+
+
+What is ISFILTERED?
+Answer: ISFILTERED checks whether a column or table is directly filtered.
+
+
+
+What is USERELATIONSHIP?
+Answer: USERELATIONSHIP activates an existing inactive relationship temporarily within a calculation.
+
+
+
+What is CROSSFILTER?
+Answer: CROSSFILTER changes the cross-filter direction or disables a relationship for a specific calculation.
+
+
+
+What is the difference between a calculated column and a calculated table?
+Answer: A Calculated Column adds a column to an existing table, whereas a Calculated Table creates a new table.
+
+
+
+What is a Time Intelligence function in DAX?
+Answer: Time Intelligence functions perform date-based calculations such as YTD, MTD, QTD and previous-year comparisons.
+
+
+
+What is TOTALYTD?
+Answer: TOTALYTD calculates the year-to-date total for a specified expression.
+
+
+
+What is DATESYTD?
+Answer: DATESYTD returns a table containing dates from the beginning of the year up to the current date in context.
+
+
+
+What is SAMEPERIODLASTYEAR?
+Answer: SAMEPERIODLASTYEAR returns the corresponding dates from the previous year.
+
+
+
+What is DATEADD?
+Answer: DATEADD shifts the dates in the current context forward or backward by a specified interval.
+
+
+
+What is PREVIOUSMONTH?
+Answer: PREVIOUSMONTH returns the dates belonging to the previous month based on the current date context.
+
+
+
+What is DATESINPERIOD?
+Answer: DATESINPERIOD returns a date range based on a specified starting date, interval and number of intervals.
+
+
+
+What is RANKX?
+Answer: RANKX evaluates an expression over a table and returns the ranking of a value.
+
+
+
+What is TOPN?
+Answer: TOPN returns the top N rows from a table based on a specified expression.
+
+
+
+What is LOOKUPVALUE?
+Answer: LOOKUPVALUE retrieves a value from a table based on matching search conditions.
+
+
+
+What is COALESCE?
+Answer: COALESCE returns the first expression that is not BLANK.
+
+
+
+What is BLANK in DAX?
+Answer: BLANK represents an empty or missing value in DAX calculations.
+
+
+
+What is the difference between BLANK and 0?
+Answer: BLANK represents a missing or empty value, whereas zero is a numeric value.
+
+
+
+What is a Running Total?
+Answer: A Running Total calculates the cumulative value of a measure across a selected sequence, such as dates.
+
+
+
+What is Year-over-Year (YoY) Growth?
+Answer: YoY Growth measures the percentage change in a metric compared with the same period in the previous year.
+
+
+
+What is Month-over-Month (MoM) Growth?
+Answer: MoM Growth measures the percentage change in a metric compared with the previous month.
+
+
+
+What is a Dynamic Measure?
+Answer: A Dynamic Measure changes its calculation or displayed result based on slicers, selections or other filter conditions.
+
+
+
+What is the difference between a Measure and an Implicit Measure?
+Answer: An Explicit Measure is created using a DAX formula, whereas an Implicit Measure is automatically generated when a numeric column is aggregated in a visual.
+
+
+
+What is a Date Table?
+Answer: A Date Table is a dedicated calendar table containing continuous dates and attributes such as Year, Quarter, Month and Day.
+
+
+
+Why do we mark a Date Table in Power BI?
+Answer: Marking a Date Table identifies the official date column for consistent time intelligence calculations.
+
+
+
+What is bidirectional filtering?
+Answer: Bidirectional filtering allows filters to propagate in both directions between related tables.
+
+
+
+What is an inactive relationship?
+Answer: An inactive relationship exists between tables but does not automatically propagate filters until activated using USERELATIONSHIP.
+
+
+
+What is the difference between a measure and a calculated column in terms of storage?
+Answer: Calculated Columns consume model storage, whereas Measures store their definitions and calculate results when queried.
+
+
+
+What is an iterator function in DAX?
+Answer: An iterator function evaluates an expression row by row over a table, such as SUMX, AVERAGEX and MAXX.
+
+
+
+What is the difference between SUMX and AVERAGEX?
+Answer: SUMX adds the evaluated row-level results, whereas AVERAGEX calculates their average.
+
+
+
+What is the difference between ALLSELECTED and REMOVEFILTERS?
+Answer: ALLSELECTED preserves relevant external selections, whereas REMOVEFILTERS clears specified filters.
+
+
+
+What is the difference between a row context and a context transition in a calculated column?
+Answer: A calculated column has row context, and using CALCULATE can convert that row context into filter context.
+
+Project Explanation.txt
+Power BI Project – Interview Answer (Step by Step)
+When an interviewer asks, "Tell me about your Power BI project and what activities you performed", students should explain the project from data collection to report deployment.
+
+Here is a simple, professional answer suitable for freshers and experienced candidates.
+Sample answer – Sales Performance Dashboard
+
+
+
+
+
+
+
+dev.to
+
+
+Interviewer: Explain your Power BI project step by step.
+
+
+
+"I worked on a Sales Performance Dashboard project. The main objective was to analyse sales, profit, product performance and regional performance.
+
+My responsibilities included the following activities:
+
+1. Requirement Gathering: Discussed with business users to understand KPIs, reporting requirements and dashboard expectations.
+
+2. Data Collection: Collected sales data from Excel files, SQL databases and other sources.
+
+3. Data Cleaning: Connected to the data using Power Query and removed duplicates, handled null values and corrected data types.
+
+4. Data Transformation: Merged and appended tables, created calculated columns and performed required transformations.
+
+5. Data Modelling: Created relationships between fact and dimension tables using a Star Schema.
+
+6. DAX Calculations: Created measures for Total Sales, Total Profit, Profit Margin, Quantity, Year-over-Year Growth and other KPIs.
+
+7. Report Development: Developed interactive dashboards using bar charts, line charts, cards, maps, tables and slicers.
+
+8. Filter Implementation: Implemented visual-level, page-level and report-level filters.
+
+9. Row-Level Security: Implemented RLS to restrict users' data access based on their regions.
+
+10. Performance Optimization: Optimised DAX, reduced unnecessary columns and visuals, and improved the data model.
+
+11. Testing and Validation: Compared Power BI results with source data and validated KPI calculations with business users.
+
+12. Publishing: Published reports to Power BI Service and organised them into workspaces.
+
+13. Refresh Configuration: Configured scheduled refresh and monitored refresh failures.
+
+14. Deployment and Sharing: Shared reports with authorised users and managed access permissions.
+
+Finally, I supported users and made enhancements based on business feedback."
+
+
+Short version – If interviewer asks for a 30-second answer
+"I was involved in the complete Power BI development lifecycle, starting from requirement gathering and data extraction to report deployment. I used Power Query for data cleaning and transformation, created a Star Schema data model, developed DAX measures, designed interactive dashboards, implemented Row-Level Security, optimised report performance, performed datWhen an interviewer asks, "Explain your Tableau project and what activities you performed?", students can use the following answer.
+Sample project – Sales Performance Dashboard
+
+
+
+
+
+
+
+
+
+Interviewer: Explain your Tableau project step by step.
+
+
+
+"I worked on a Sales Performance Dashboard project. The main objective was to analyse sales, profit, customer performance and regional performance.
+
+My responsibilities included the following activities:
+
+1. Requirement Gathering: Discussed with business users and collected dashboard requirements, KPIs and reporting expectations.
+
+2. Data Connection: Connected Tableau to SQL Server, Excel and CSV files.
+
+3. Data Understanding: Analysed the source tables, columns, data types and relationships.
+
+4. Data Preparation: Cleaned data, handled null values, renamed fields and changed data types.
+
+5. Data Modelling: Created relationships, joins and unions between different tables.
+
+6. Calculated Fields: Created calculated fields for Profit Margin, Sales Ratio, Year-over-Year Growth and other business metrics.
+
+7. LOD Expressions: Used FIXED, INCLUDE and EXCLUDE expressions for advanced calculations.
+
+8. Visualisation Development: Created bar charts, line charts, maps, pie charts, tables and KPI cards.
+
+9. Dashboard Development: Combined multiple worksheets into interactive dashboards.
+
+10. Filters and Parameters: Implemented context filters, dimension filters, measure filters, date filters and parameters.
+
+11. Dashboard Actions: Implemented filter actions, highlight actions, URL actions and parameter actions.
+
+12. Performance Optimization: Reduced unnecessary worksheets, optimised calculations, limited marks and used extracts where appropriate.
+
+13. Testing and Validation: Compared dashboard results with source data and validated business calculations.
+
+14. Publishing: Published workbooks and dashboards to Tableau Server or Tableau Cloud.
+
+15. Security and Permissions: Configured project permissions, user access and data-level security.
+
+16. Data Refresh: Configured extract refresh schedules and monitored refresh failures.
+
+"Finally, I supported business users and enhanced dashboards based on their feedback."
+Short version – 30-second interview answer
+"I worked on the complete Tableau development lifecycle, starting from requirement gathering and data connection to dashboard deployment. I connected Tableau to different data sources, performed data preparation, created relationships and joins, developed calculated fields and LOD expressions, built interactive visualisations and dashboards, implemented filters, parameters and dashboard actions, optimised performance, validated the results and published workbooks to Tableau Server or Tableau Cloud with appropriate permissions and extract refresh schedules."a validation, and published reports to Power BI Service with scheduled refresh."
+
+
+
+
+Qlik Sense Project – Interview Answer (Step by Step)
+When an interviewer asks, "Explain your Qlik Sense project and what activities you performed?", students can use the following answer.
+Sample project – Sales Performance Dashboard
+
+
+
+
+
+
+
+help.qlik.com
+
+
+Interviewer: Explain your Qlik Sense project step by step.
+
+Candidate:
+
+"I worked on a Sales Performance Dashboard project. The main objective was to analyse sales, profit, customer performance and regional performance.
+
+My responsibilities included the following activities:
+
+1. Requirement Gathering: Discussed with business users to understand reporting requirements, KPIs and dashboard expectations.
+
+2. Data Connection: Connected Qlik Sense to SQL Server, Excel, CSV files and other data sources.
+
+3. Data Understanding: Analysed source tables, fields, data types and business requirements.
+
+4. Data Extraction: Loaded data using Qlik Sense Load Editor and created connections to different data sources.
+
+5. Data Transformation: Used script functions such as WHERE, JOIN, CONCATENATE, RESIDENT LOAD and preceding LOAD.
+
+6. Data Modelling: Designed the associative data model and created fact and dimension tables. Removed unwanted synthetic keys and circular references.
+
+7. QVD Implementation: Created QVD files for storing reusable transformed data and improving reload performance.
+
+8. Calculated Expressions: Developed measures using aggregation functions, IF conditions and calculated dimensions.
+
+9. Set Analysis: Created expressions for current-year sales, previous-year sales, regional sales and comparative analysis.
+
+10. Visualisation Development: Created KPI objects, bar charts, line charts, pie charts, straight tables, maps and filters.
+
+11. Variables and Parameters: Used SET and LET statements, variables and dynamic dimensions to make dashboards interactive.
+
+12. Dashboard Development: Created interactive sheets with filters, alternate states, drill-down dimensions and navigation.
+
+13. Performance Optimization: Optimised load scripts, used QVDs, reduced unnecessary fields and simplified chart expressions.
+
+14. Testing and Validation: Compared dashboard results with source data and validated business calculations.
+
+15. Publishing: Published Qlik applications to Qlik Cloud or Qlik Sense Enterprise streams.
+
+16. Security: Implemented Section Access to restrict data visibility based on user access.
+
+17. Data Reload: Configured reload tasks and monitored reload failures.
+
+"Finally, I supported business users and enhanced dashboards based on their feedback."
+Short version – 30-second interview answer
+"I worked on the complete Qlik Sense development lifecycle, starting from requirement gathering and data extraction to dashboard deployment. I connected Qlik Sense to different data sources, developed load scripts, performed data transformations, created QVD files, designed the associative data model, developed chart expressions and Set Analysis, built interactive dashboards, implemented alternate states and Section Access, optimised application performance, validated data and published applications to Qlik Cloud or Qlik Sense Enterprise."
+Important Qlik Sense follow-up interview questions
+
+
+Publishing.txt
+How to publish dashboards and reports in Power BI, Tableau and Qlik Sense
+In interviews, explain that publishing means deploying a report or dashboard from a development environment to a cloud service or server so that other users can access it with appropriate permissions.
+1. Power BI – Publish a report
+Step-by-step process
+1. Open the report in Power BI Desktop.
+2. Complete the report design and validate the data.
+3. Save the .pbix file.
+4. Sign in to Power BI Desktop using your organisational account.
+5. Select Home → Publish.
+6. Select the destination workspace.
+7. Wait for the publishing process to complete.
+8. Open Power BI Service at Power BI Service.
+9. Open the workspace and verify the report and semantic model.
+10. Configure permissions and share the report.
+How to share with users
+- Use Share to grant report access to specific users.
+- Create an App from the workspace to distribute reports to a larger audience.
+- Configure workspace roles such as Admin, Member, Contributor and Viewer.
+- Configure Row-Level Security (RLS) to restrict data access.
+Important interview points
+- .pbix is the Power BI Desktop file format.
+- Workspace is used to organise and manage reports and semantic models.
+- App is used to distribute content to business users.
+- A Power BI Pro or appropriate capacity licence may be required, depending on the sharing and workspace setup.
+
+
+
+2. Tableau – Publish a dashboard
+Step-by-step process
+1. Open the workbook in Tableau Desktop.
+2. Complete the worksheets and dashboard.
+3. Save the workbook as .twb or .twbx.
+4. Sign in to Tableau Server or Tableau Cloud.
+5. Select Server → Publish Workbook.
+6. Choose the destination project.
+7. Enter the workbook name.
+8. Configure data-source options:
+   - Live connection
+   - Extract connection
+9. Configure permissions for users and groups.
+10. Click Publish.
+11. Open Tableau Server or Cloud and verify the dashboard.
+How to share with users
+- Assign users to the appropriate site.
+- Publish the workbook to the required project.
+- Configure project and workbook permissions.
+- Assign Viewer, Explorer or Creator site roles as appropriate.
+- Configure row-level data security when required.
+Important interview points
+- .twb contains workbook definitions.
+- .twbx is a packaged workbook that can include supporting data and resources.
+- Tableau Server is generally organisation-hosted or self-managed.
+- Tableau Cloud is Tableau's hosted cloud platform.
+- Projects are used to organise published workbooks and data sources.
+3. Qlik Sense – Publish an app
+
+
+Step-by-step process – Qlik Sense Enterprise on Windows
+1. Open Qlik Sense Desktop or access the development environment.
+2. Create the application and build sheets.
+3. Reload the data.
+4. Save the application.
+5. Export the app as a .qvf file if moving it between environments.
+6. Open Qlik Management Console (QMC).
+7. Import the .qvf file if it is being deployed from another environment.
+8. Publish the app to the required Stream.
+9. Assign user access and permissions.
+10. Open Qlik Sense Hub and verify the published app.
+Step-by-step process – Qlik Cloud
+1. Open Qlik Cloud.
+2. Create or select the required space.
+3. Upload or create the app.
+4. Open the app and verify its sheets and data.
+5. Publish the app to the appropriate managed space, where applicable.
+6. Configure space and app permissions.
+7. Share the app with authorised users.
+Important interview points
+- .qvf is the Qlik Sense application file format.
+- QMC is used for administration in Qlik Sense Enterprise on Windows.
+- Streams are used to distribute published apps in the Windows client-managed environment.
+- Qlik Cloud uses spaces for organising and controlling app access.
+- Reload tasks can automate data refresh.
+
+Qlik Sense.txt
+What is Qlik Sense?
+Answer: Qlik Sense is a Business Intelligence and data visualisation platform used to analyse data and create interactive dashboards.
+
+
+
+What is an Associative Engine in Qlik Sense?
+Answer: The Associative Engine allows users to explore relationships between data through selections and associations across tables.
+
+
+
+What is the difference between Qlik Sense and Power BI?
+Answer: Qlik Sense uses an associative data model, whereas Power BI primarily uses a relationship-based semantic model.
+
+
+
+What is a QVD file?
+Answer: QVD (QlikView Data) is a proprietary Qlik file format used to store data efficiently for faster loading and reuse.
+
+
+
+What is a Resident Load?
+Answer: Resident Load loads data from an already loaded table in the Qlik data model.
+
+
+
+What is a Preceding Load?
+Answer: Preceding Load allows data transformations to be performed through multiple LOAD statements in a single data-loading process.
+
+
+
+What is the difference between JOIN and KEEP in Qlik?
+Answer: JOIN combines tables into one table, whereas KEEP reduces tables based on common field values while retaining separate tables.
+
+
+
+What is Mapping Load?
+Answer: Mapping Load creates a temporary mapping table used to replace values using ApplyMap().
+
+
+
+What is ApplyMap()?
+Answer: ApplyMap() retrieves a corresponding value from a mapping table based on a lookup key.
+
+
+
+What is Concatenate in Qlik Sense?
+Answer: Concatenate appends records from one table to another table with compatible fields.
+
+
+
+What is Set Analysis in Qlik Sense?
+Answer: Set Analysis allows calculations to be performed on a defined set of records independently of or in addition to current selections.
+
+
+
+Why do we use Set Analysis?
+Answer: Set Analysis helps calculate values based on specific conditions, ignoring selections or comparing different selection states.
+
+
+
+What is the syntax of Set Analysis?
+Answer: The general syntax is Aggregation({SetExpression} Field).
+
+
+
+What is the default set identifier in Qlik Sense?
+Answer: $ represents the current selection state.
+
+
+
+What does {1} represent in Set Analysis?
+Answer: {1} represents the entire data set, ignoring current selections.
+
+
+
+What does {$} represent?
+Answer: {$} represents the current selection state and is the default selection identifier.
+
+
+
+What does $1 represent in Set Analysis?
+Answer: $1 represents the previous selection state.
+
+
+
+What does $_1 represent?
+Answer: $_1 represents the next selection state in Qlik's selection history, when available.
+
+
+
+What is a Set Modifier?
+Answer: A Set Modifier specifies conditions on fields to modify the records included in a set expression.
+
+
+
+What is the syntax of a Set Modifier?
+Answer: The syntax is {<FieldName={Value}>}.
+
+
+
+How do you calculate sales for the East Region irrespective of current Region selection?
+Answer: Use Sum({<Region={'East'}>} Sales).
+
+
+
+How do you calculate total sales ignoring all user selections?
+Answer: Use Sum({1} Sales).
+
+
+
+How do you ignore only the Region selection?
+Answer: Use Sum({<Region=>} Sales).
+
+
+
+What is the difference between {1} and <Region=>?
+Answer: {1} ignores all current selections, whereas <Region=> ignores only the Region selection.
+
+
+
+How do you calculate sales for the Furniture category?
+Answer: Use Sum({<Category={'Furniture'}>} Sales).
+
+
+
+How do you calculate sales for East Region and Furniture Category?
+Answer: Use Sum({<Region={'East'}, Category={'Furniture'}>} Sales).
+
+
+
+How do you calculate sales for East OR West Region?
+Answer: Use Sum({<Region={'East','West'}>} Sales).
+
+
+
+How do you exclude the West Region?
+Answer: Use Sum({<Region-={'West'}>} Sales).
+
+
+
+What is the difference between = and -= in Set Analysis?
+Answer: = assigns or replaces the selection for a field, whereas -= removes specified values from the current selection.
+
+
+
+How do you calculate sales for the current year?
+Answer: Use Sum({<Year={$(=Max(Year))}>} Sales).
+
+
+
+What is Dollar-Sign Expansion?
+Answer: Dollar-Sign Expansion evaluates an expression or variable and inserts its result into another expression.
+
+
+
+What is the syntax of Dollar-Sign Expansion?
+Answer: The syntax is $(Expression) or $(VariableName).
+
+
+
+What is the difference between SET and LET in Qlik scripting?
+Answer: SET assigns the literal text to a variable, whereas LET evaluates the expression before assigning its result.
+
+
+
+What is an Alternate State?
+Answer: An Alternate State allows users to create independent selection states for comparing different selections in the same application.
+
+
+
+Why do we use Alternate States?
+Answer: Alternate States allow users to compare different selections, such as East Region versus West Region, simultaneously.
+
+
+
+How do you calculate sales using Alternate State A?
+Answer: Use Sum({StateA} Sales).
+
+
+
+How do you display the selected Region from Alternate State A in a chart title?
+Answer: Use GetFieldSelections({StateA} Region).
+
+
+
+What is the difference between Set Analysis and Alternate States?
+Answer: Set Analysis defines the data included in an expression, whereas Alternate States maintain independent selection environments.
+
+
+
+What is P() in Set Analysis?
+Answer: P() returns the possible values of a field based on the specified set.
+
+
+
+What is E() in Set Analysis?
+Answer: E() returns the excluded values of a field based on the specified set.
+
+
+
+What is the difference between P() and E()?
+Answer: P() returns possible field values, whereas E() returns excluded field values.
+
+
+
+What are Set Operators in Qlik Sense?
+Answer: Set Operators combine sets using union (+), exclusion (-), intersection (*) and symmetric difference (/).
+
+
+
+What is the union operator (+)?
+Answer: The union operator combines records from two sets.
+
+
+
+What is the intersection operator (*)?
+Answer: The intersection operator returns only records common to both sets.
+
+
+
+What is the exclusion operator (-)?
+Answer: The exclusion operator returns records present in the first set but not in the second set.
+
+
+
+What is the symmetric difference operator (/)?
+Answer: The symmetric difference operator returns records belonging to either set but not both.
+
+
+
+What is Aggr() in Qlik Sense?
+Answer: Aggr() creates a virtual grouped table and performs calculations at a specified dimension level.
+
+
+
+What is the difference between Sum() and Aggr()?
+Answer: Sum() aggregates values directly, whereas Aggr() creates intermediate grouped results for further calculations.
+
+
+
+What is Above() in Qlik Sense?
+Answer: Above() retrieves the value of an expression from a row above the current row in a chart.
+
+
+
+What is RangeSum()?
+Answer: RangeSum() calculates the sum of a range of values or expressions.
+
+
+
+What is the difference between RangeSum() and Sum()?
+Answer: Sum() aggregates field values across records, whereas RangeSum() sums a range of expression results.
+
+
+
+What is TOTAL in Qlik Sense?
+Answer: TOTAL ignores chart dimensions when calculating an aggregation, subject to applicable selections.
+
+
+
+What is the difference between Sum(Sales) and Sum(TOTAL Sales)?
+Answer: Sum(Sales) respects chart dimensions, whereas Sum(TOTAL Sales) calculates the total across chart dimensions.
+
+
+
+What is Rank() in Qlik Sense?
+Answer: Rank() returns the ranking of an expression within a chart's dimensional context.
+
+
+
+What is Match() in Qlik Sense?
+Answer: Match() performs a case-sensitive comparison and returns the position of a matching value.
+
+
+
+What is WildMatch()?
+Answer: WildMatch() performs pattern matching using wildcard characters such as * and ?.
+
+
+
+What is Pick() in Qlik Sense?
+Answer: Pick() returns an expression from a list based on a specified position.
+
+
+
+What is If() in Qlik Sense?
+Answer: If() evaluates a condition and returns one result when TRUE and another when FALSE.
+
+
+
+What is the difference between DISTINCT and NODISTINCT in Aggr()?
+Answer: DISTINCT creates one result per unique dimensional combination, whereas NODISTINCT can retain repeated results at the underlying row level.
+
+
+
+What is a Master Measure?
+Answer: A Master Measure is a reusable predefined calculation that can be used across multiple visualisations.
+
+
+
+What is a Master Dimension?
+Answer: A Master Dimension is a reusable predefined dimension used across multiple visualisations.
+
+
+
+What is a Variable Input?
+Answer: Variable Input is an interface control that allows users to change variable values interactively.
+
+
+
+What is a Dynamic Dimension?
+Answer: A Dynamic Dimension changes the dimension used in a visualisation based on a variable or user selection.
+
+
+
+What is a Circular Reference in Qlik?
+Answer: A Circular Reference occurs when tables have multiple association paths that create ambiguous relationships.
+
+
+
+What is a Synthetic Key?
+Answer: A Synthetic Key is automatically generated by Qlik when two or more tables share multiple common fields.
+
+
+
+What is an Associative Data Model?
+Answer: An Associative Data Model connects tables through common fields and allows interactive data exploration.
+
+
+
+What is Incremental Load?
+Answer: Incremental Load loads only new or changed records instead of reloading the entire dataset.
+
+
+
+What is a Binary Load?
+Answer: Binary Load loads the data model from an existing Qlik application into another Qlik application.
+
+
+
+What is a Section Access?
+Answer: Section Access implements data reduction and access control based on user identity and security rules.
+
+
+
+What is the difference between Section Access and Set Analysis?
+Answer: Section Access controls which data users are authorised to see, whereas Set Analysis controls the records included in a calculati
+
+Sql Interview.txt
+SQL Interview Questions and Answers – 60 Important Questions
+For Freshers | One-line Answers | Interview Preparation
+
+1. What is SQL?
+Answer: SQL (Structured Query Language) is used to store, retrieve, manipulate and manage data in relational databases.
+
+2. What is a database?
+Answer: A database is an organised collection of data stored electronically.
+
+3. What is a table?
+Answer: A table stores data in rows and columns.
+
+4. What is a primary key?
+Answer: A primary key uniquely identifies each record and does not allow NULL or duplicate values.
+
+5. What is a foreign key?
+Answer: A foreign key establishes a relationship between two tables by referencing a primary or unique key.
+
+6. What is the difference between WHERE and HAVING?
+Answer: WHERE filters rows before grouping, whereas HAVING filters groups after GROUP BY.
+
+7. What is the difference between DELETE, TRUNCATE and DROP?
+Answer: DELETE removes selected rows, TRUNCATE removes all rows, and DROP removes the entire table structure.
+
+8. What is NULL in SQL?
+Answer: NULL represents a missing or unknown value, not zero or an empty string.
+
+9. What is a JOIN in SQL?
+Answer: JOIN combines records from two or more tables based on a related column.
+
+10. What is INNER JOIN?
+Answer: INNER JOIN returns only matching records from both tables.
+
+11. What is LEFT JOIN?
+Answer: LEFT JOIN returns all records from the left table and matching records from the right table.
+
+12. What is RIGHT JOIN?
+Answer: RIGHT JOIN returns all records from the right table and matching records from the left table.
+
+13. What is FULL OUTER JOIN?
+Answer: FULL OUTER JOIN returns matching and non-matching records from both tables.
+
+14. What is CROSS JOIN?
+Answer: CROSS JOIN returns the Cartesian product of two tables.
+
+15. What is SELF JOIN?
+Answer: SELF JOIN joins a table with itself to compare related records within the same table.
+
+16. What is the difference between INNER JOIN and LEFT JOIN?
+Answer: INNER JOIN returns matching records only, whereas LEFT JOIN also returns unmatched left-table records.
+
+17. What is an equi join?
+Answer: An equi join uses the equality operator (=) to match records between tables.
+
+18. What is a subquery?
+Answer: A subquery is a query written inside another SQL query.
+
+19. What is a correlated subquery?
+Answer: A correlated subquery depends on values from the outer query and executes logically for each outer row.
+
+20. What is a non-correlated subquery?
+Answer: A non-correlated subquery executes independently of the outer query.
+
+21. What is the difference between IN and EXISTS?
+Answer: IN checks whether a value matches a list, whereas EXISTS checks whether the subquery returns any rows.
+
+22. What is a scalar subquery?
+Answer: A scalar subquery returns exactly one row and one column.
+
+23. Can we use a subquery in the FROM clause?
+Answer: Yes, a subquery in the FROM clause acts as a derived table.
+
+24. How do you find employees earning more than the average salary?
+Answer: Use a subquery with AVG(Salary) in the WHERE clause.
+
+25. What are set operators in SQL?
+Answer: Set operators combine the results of two or more SELECT statements.
+
+26. What is UNION?
+Answer: UNION combines results and removes duplicate records.
+
+27. What is UNION ALL?
+Answer: UNION ALL combines results without removing duplicate records.
+
+28. What is the difference between UNION and UNION ALL?
+Answer: UNION removes duplicates, whereas UNION ALL retains duplicates and is generally faster.
+
+29. What is INTERSECT?
+Answer: INTERSECT returns only the common records from both SELECT statements.
+
+30. What is MINUS or EXCEPT?
+Answer: MINUS or EXCEPT returns records from the first query that are not present in the second query.
+
+31. What are the requirements for using set operators?
+Answer: SELECT statements must have the same number of columns with compatible corresponding data types.
+
+32. What is DDL?
+Answer: DDL (Data Definition Language) defines and modifies database structures.
+
+33. What are DDL commands?
+Answer: CREATE, ALTER, DROP and TRUNCATE are commonly used DDL commands.
+
+34. What is CREATE?
+Answer: CREATE is used to create database objects such as tables, views and databases.
+
+35. What is ALTER?
+Answer: ALTER modifies the structure of an existing database object.
+
+36. What is DROP?
+Answer: DROP permanently removes a database object and its structure.
+
+37. What is DML?
+Answer: DML (Data Manipulation Language) is used to insert, update and delete records in database tables.
+
+38. What are DML commands?
+Answer: INSERT, UPDATE and DELETE are common DML commands.
+
+39. What is INSERT?
+Answer: INSERT adds new records into a table.
+
+40. What is UPDATE?
+Answer: UPDATE modifies existing records in a table.
+
+41. What is DELETE?
+Answer: DELETE removes records from a table, optionally based on a WHERE condition.
+
+42. What is DCL?
+Answer: DCL (Data Control Language) manages database access permissions and user privileges.
+
+43. What are DCL commands?
+Answer: GRANT and REVOKE are the primary DCL commands.
+
+44. What is GRANT?
+Answer: GRANT provides database permissions to users or roles.
+
+45. What is REVOKE?
+Answer: REVOKE removes previously granted database permissions.
+
+46. What is TCL?
+Answer: TCL (Transaction Control Language) manages database transactions.
+
+47. What is COMMIT?
+Answer: COMMIT permanently saves the changes made in the current transaction.
+
+48. What is ROLLBACK?
+Answer: ROLLBACK undoes uncommitted changes in the current transaction.
+
+49. What is SAVEPOINT?
+Answer: SAVEPOINT creates a point within a transaction to which we can partially roll back.
+
+50. What are ACID properties?
+Answer: ACID stands for Atomicity, Consistency, Isolation and Durability, ensuring reliable database transactions.
+
+51. How do you find duplicate records?
+Answer: Use GROUP BY with HAVING COUNT(*) > 1.
+
+52. How do you find the second-highest salary?
+Answer: Use DENSE_RANK() or a subquery with MAX().
+
+53. How do you find the highest salary in each department?
+Answer: Use GROUP BY Department with MAX(Salary), or use a window function.
+
+54. What is a view?
+Answer: A view is a virtual table based on the result of a SQL query.
+
+55. What is an index?
+Answer: An index improves data retrieval speed by providing an efficient lookup structure.
+
+56. What is the difference between CHAR and VARCHAR?
+Answer: CHAR stores fixed-length strings, whereas VARCHAR stores variable-length strings.
+
+57. What is GROUP BY?
+Answer: GROUP BY groups rows with identical values for aggregate calculations.
+
+58. What is ORDER BY?
+Answer: ORDER BY sorts query results in ascending or descending order.
+
+59. What is a window function?
+Answer: A window function performs calculations across related rows without collapsing them into one row per group.
+
+60. What is the difference between RANK, DENSE_RANK and ROW_NUMBER?
+Answer: RANK skips numbers after ties, DENSE_RANK does not skip numbers, and ROW_NUMBER assigns a unique sequential number to each row.
+
+Tableau.txt
+What is Tableau?
+Answer: Tableau is a Business Intelligence and data visualisation tool used to analyse data and create interactive dashboards and reports.
+
+
+
+What are Dimensions in Tableau?
+Answer: Dimensions are qualitative fields used to categorise, group and segment data, such as Region, Category and Customer Name.
+
+
+
+What are Measures in Tableau?
+Answer: Measures are quantitative fields that can be aggregated, such as Sales, Profit and Quantity.
+
+
+
+What is the difference between Dimensions and Measures?
+Answer: Dimensions describe data, whereas Measures represent numerical values that can be aggregated.
+
+
+
+What is the difference between Discrete and Continuous fields?
+Answer: Discrete fields create separate headers, whereas Continuous fields create continuous axes.
+
+
+
+What is a Calculated Field?
+Answer: A Calculated Field is a custom formula created to derive new values using existing data.
+
+
+
+What is an Aggregate Function in Tableau?
+Answer: An Aggregate Function summarises multiple records into a single value using functions such as SUM, AVG, MIN and MAX.
+
+
+
+What is the difference between SUM and AVG?
+Answer: SUM calculates the total of values, whereas AVG calculates their average.
+
+
+
+What is a Filter in Tableau?
+Answer: A Filter restricts the data displayed in a worksheet or dashboard based on specified conditions.
+
+
+
+What are the different types of Filters in Tableau?
+Answer: Extract Filters, Data Source Filters, Context Filters, Dimension Filters, Measure Filters and Table Calculation Filters.
+
+
+
+What is a Context Filter?
+Answer: A Context Filter creates a primary filtering context that other dimension filters can use as a reference.
+
+
+
+What is the difference between Context Filter and Dimension Filter?
+Answer: Context Filters are evaluated before regular dimension filters and establish a filtered data context.
+
+
+
+What is a Measure Filter?
+Answer: A Measure Filter filters data based on aggregated numerical values, such as SUM(Sales) greater than 10,000.
+
+
+
+What is an Extract Filter?
+Answer: An Extract Filter limits the data included when creating a Tableau extract.
+
+
+
+What is a Table Calculation?
+Answer: A Table Calculation performs calculations on the results already present in a visualisation, such as Running Total and Percent of Total.
+
+
+
+What is a Level of Detail (LOD) Expression?
+Answer: LOD Expressions control the level of granularity at which a calculation is performed, independently of the visualisation's displayed level of detail.
+
+
+
+What are the three types of LOD Expressions?
+Answer: FIXED, INCLUDE and EXCLUDE.
+
+
+
+What is FIXED LOD?
+Answer: FIXED LOD calculates values at a specified dimension level, independent of the dimensions in the visualisation.
+
+
+
+What is INCLUDE LOD?
+Answer: INCLUDE LOD adds specified dimensions to the visualisation's level of detail for performing calculations.
+
+
+
+What is EXCLUDE LOD?
+Answer: EXCLUDE LOD removes specified dimensions from the visualisation's level of detail for performing calculations.
+
+
+
+What is the difference between FIXED, INCLUDE and EXCLUDE?
+Answer: FIXED specifies an independent level of detail, INCLUDE adds dimensions and EXCLUDE removes dimensions from the view's level of detail.
+
+
+
+What is the syntax of FIXED LOD?
+Answer: { FIXED [Dimension] : AGGREGATE([Measure]) }.
+
+
+
+What is the syntax of INCLUDE LOD?
+Answer: { INCLUDE [Dimension] : AGGREGATE([Measure]) }.
+
+
+
+What is the syntax of EXCLUDE LOD?
+Answer: { EXCLUDE [Dimension] : AGGREGATE([Measure]) }.
+
+
+
+How do you calculate total sales irrespective of Region?
+Answer: Use { FIXED : SUM([Sales]) } to calculate overall sales independent of the dimensions in the view.
+
+
+
+How do you calculate customer-level sales?
+Answer: Use { FIXED [Customer Name] : SUM([Sales]) }.
+
+
+
+How do you calculate average sales per customer?
+Answer: Use { FIXED [Customer Name] : AVG([Sales]) } to calculate the average order-level sales for each customer.
+
+
+
+How do you calculate total sales by Category irrespective of Sub-Category?
+Answer: Use { EXCLUDE [Sub-Category] : SUM([Sales]) }.
+
+
+
+How do you calculate customer sales including an additional City dimension?
+Answer: Use { INCLUDE [City] : SUM([Sales]) }.
+
+
+
+What is the difference between LOD and Table Calculations?
+Answer: LOD expressions calculate at a specified data granularity, whereas Table Calculations operate on the aggregated results in the visualisation.
+
+
+
+What is the order of operations in Tableau?
+Answer: Tableau follows a defined query execution sequence involving extract, data source, context, dimension, measure and table calculation filters.
+
+
+
+How does FIXED LOD interact with filters?
+Answer: FIXED LOD is evaluated before ordinary dimension filters, but after extract, data source and context filters.
+
+
+
+How do you make a FIXED LOD respond to a dimension filter?
+Answer: Add the dimension filter to Context so it is applied before the FIXED LOD calculation.
+
+
+
+What is a Dashboard in Tableau?
+Answer: A Dashboard combines multiple worksheets and objects into a single interactive view.
+
+
+
+What is a Story in Tableau?
+Answer: A Story is a sequence of worksheets or dashboards arranged to communicate insights through a narrative.
+
+
+
+What is a Dashboard Action?
+Answer: A Dashboard Action allows users to interact with one visualisation and dynamically affect another visualisation or dashboard element.
+
+
+
+What are the different types of Dashboard Actions?
+Answer: Filter Actions, Highlight Actions, URL Actions, Go to Sheet Actions, Change Parameter Actions and Change Set Values Actions.
+
+
+
+What is a Filter Action?
+Answer: A Filter Action uses selections in one worksheet to filter data in another worksheet.
+
+
+
+What is a Highlight Action?
+Answer: A Highlight Action highlights related data points without removing the remaining data from the view.
+
+
+
+What is a URL Action?
+Answer: A URL Action opens an external webpage or web application based on a user interaction.
+
+
+
+What is a Go to Sheet Action?
+Answer: A Go to Sheet Action navigates users from one worksheet or dashboard to another.
+
+
+
+What is a Change Parameter Action?
+Answer: A Change Parameter Action dynamically updates a parameter based on a user's selection.
+
+
+
+What is a Change Set Values Action?
+Answer: A Change Set Values Action dynamically changes the members of a set based on user selections.
+
+
+
+What is the difference between Filter Action and Highlight Action?
+Answer: Filter Action removes non-matching records from the target view, whereas Highlight Action visually emphasises matching records.
+
+
+
+What is a Parameter in Tableau?
+Answer: A Parameter is a user-controlled variable that can be used in calculations, filters and dashboard actions.
+
+
+
+What is the difference between Parameter and Filter?
+Answer: A Filter directly restricts data, whereas a Parameter stores a user-selected value that can influence calculations and views.
+
+
+
+What is a Set in Tableau?
+Answer: A Set is a custom subset of data members based on defined conditions or manual selections.
+
+
+
+What is the difference between Set and Group?
+Answer: A Set divides data into IN and OUT members, whereas a Group combines selected members into a single category.
+
+
+
+What is a Hierarchy in Tableau?
+Answer: A Hierarchy organises dimensions into multiple levels, such as Country → State → City.
+
+
+
+What is Data Blending?
+Answer: Data Blending combines data from different data sources using common linking fields at an aggregated level.
+
+
+
+What is the difference between Join and Data Blending?
+Answer: Joins combine tables at the row level, whereas Data Blending combines aggregated results from separate data sources.
+
+
+
+What is a Relationship in Tableau?
+Answer: A Relationship is a logical connection between tables that allows Tableau to generate queries based on the fields used in a visualisation.
+
+
+
+What is the difference between Relationship and Join?
+Answer: Relationships preserve the logical table structures and determine joins dynamically, whereas joins physically combine tables into a single logical table.
+
+
+
+What are the different types of Joins in Tableau?
+Answer: Inner Join, Left Join, Right Join and Full Outer Join.
+
+
+
+What is a Dual Axis Chart?
+Answer: A Dual Axis Chart displays two different measures using separate axes in the same visualisation.
+
+
+
+What is a Combined Axis Chart?
+Answer: A Combined Axis Chart displays multiple measures using the same axis.
+
+
+
+What is a Running Total in Tableau?
+Answer: A Running Total calculates cumulative values across the rows or columns in a visualisation.
+
+
+
+What is a Moving Average?
+Answer: A Moving Average calculates the average of values over a specified rolling period.
+
+
+
+What is the difference between INDEX and RANK in Tableau?
+Answer: INDEX returns the sequential position of a row in the partition, whereas RANK assigns rankings based on measure values.
+
+
+
+What is LOOKUP in Tableau?
+Answer: LOOKUP returns the value of an expression from another row based on a relative offset.
+
+
+
+What is WINDOW_SUM?
+Answer: WINDOW_SUM calculates the sum of an expression across a specified window of rows.
+
+
+
+What is WINDOW_AVG?
+Answer: WINDOW_AVG calculates the average of an expression across a specified window of rows.
+
+
+
+What is ATTR in Tableau?
+Answer: ATTR returns a value when all underlying records have the same value; otherwise, it displays an asterisk.
+
+
+
+What is the difference between COUNT and COUNTD?
+Answer: COUNT counts non-null records, whereas COUNTD counts distinct non-null values.
+
+
+
+What is Data Densification?
+Answer: Data Densification generates additional marks for missing combinations or dates in certain visualisations to support analytical calculations.
+
+
+
+What is a Reference Line?
+Answer: A Reference Line displays a benchmark such as average, median or target value in a chart.
+
+
+
+What is a Bins field?
+Answer: Bins group continuous numerical values into equal-sized intervals for distribution analysis.
+
+
+
+What is a Forecast in Tableau?
+Answer: Forecasting uses historical time-series data to estimate future values.
+
+
+
+What is Tableau Extract?
+Answer: A Tableau Extract is a snapshot of data stored in Tableau's optimised extract format, typically Hyper.
+
+
+
+What is the difference between Live Connection and Extract Connection?
+Answer: Live Connection queries the underlying data source, whereas Extract Connection uses a stored snapshot of data.
